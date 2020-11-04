@@ -7,35 +7,67 @@ body {
     /* background-repeat: no-repeat; */
     margin: 0px;
     padding: 0px;
+    /* width: 100%; */
    }
 
-img{
-    width: 100%;
+   html {
+    /* width: 100%; */
+    overflow:  hidden; 
 }
+
+img{
+    width: 100vw;
+    max-width: 100%;
+    /* max-width: 100%; */
+    /* width: 100%; */
+    position: relative;
+
+    
+}
+
+/* .sl{
+    justify-content: center;
+    align-content: center;
+} */
+
+    #caption_slider {
+
+       /* width: 100%; */
+       position: relative;
+     /* height: 427px; */
+    }
+
+
+
+
 
 
 #header{
     position: absolute;
-    top: 100px;
+    top: 20vh;
+    left: 50vw;
+    z-index: 100;
+
 }
 
 #name {
     color: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    justify-content: center
+    text-align: center;
+    margin-left: -100%;
 }
 
 #who{
     color: rgb(255, 255, 255);
     text-align: center;
+    margin-left: -100%;
 }
 
 #social{
-    position:relative;
-    top: 100px;
+    position: relative;;
+    top: 20vh;
     display: flex;
     justify-content: center;
+    margin-left: -100%;
 }
 
 #social span{
@@ -49,9 +81,9 @@ img{
     margin: 2px;
 }
 
-#dots{
+/* #dots{
   position: absolute;
   right: 30px;
   bottom:30%;
-}
+} */
 
