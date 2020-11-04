@@ -11,7 +11,7 @@
 .glide-pagination
 {
   display: block;
-  position: absolute;
+  position: fixed;
   top:90vh;
   right: 20px;
   /* text-align: center; */

@@ -8,11 +8,13 @@ body {
     margin: 0px;
     padding: 0px;
     /* width: 100%; */
+    position:fixed
    }
 
    html {
     /* width: 100%; */
     overflow:  hidden; 
+    
 }
 
 img{
@@ -73,7 +75,7 @@ img{
 
 #social{
     position: relative;;
-    top: 20vh;
+    top: 25vh;
     display: flex;
     justify-content: center;
     margin-left: -100%;
