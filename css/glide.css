@@ -12,8 +12,9 @@
 {
   display: block;
   position: fixed;
-  top:90vh;
-  right: 20px;
+  /* top:90vh; */
+  bottom: 3vh;
+  right: 3vw;
   /* text-align: center; */
   /* margin-top: 3px; */
   z-index: 100;
@@ -43,7 +44,7 @@
   height: 13px;
   width: 13px;
   border-radius: 10px;
-  margin-right: 3px;
+  margin-right: 7px;
   text-indent: -9999px;
 }
 
@@ -70,12 +71,13 @@
 
 .glide-pagination a:hover
 {
-  background-color: steelblue;
+  background-color:  rgb(51, 51, 51);
 }
 
 .glide-pagination a.active
 {
-  background-color: steelblue;
+  background-color: rgb(51, 51, 51);
+  border: solid 2px rgb(124, 124, 124);
 }
 
 .slider-caption
