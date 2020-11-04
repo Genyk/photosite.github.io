@@ -59,6 +59,7 @@ body {
     left: 50vw;
     z-index: 100;
 
+
 }
 
 #name {
@@ -74,11 +75,12 @@ body {
 }
 
 #social{
-    position: relative;;
-    top: 25vh;
+    position: absolute;
+    /* top: 30vh; */
+    top: 60vh;
     display: flex;
     justify-content: center;
-    margin-left: -100%;
+    margin-left: -130px;
     padding-inline-start: 0px;
     
 }
@@ -98,8 +100,8 @@ body {
 li img{
     /* display: block; */
     position: absolute;
-    height: 32px;
-    width: 32px;
+    max-height: 32px;
+    max-width: 32px;
     
 
 }
