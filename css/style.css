@@ -17,6 +17,14 @@ body {
     
 }
 
+@font-face {
+  font-family: Wildy-Sans; 
+  src: url(../fonts/Wildy-Sans.ttf);
+ }
+
+
+
+
 .slider_container img{
     width: 100vw;
     
@@ -55,23 +63,31 @@ body {
 
 #header{
     position: absolute;
-    top: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     left: 50vw;
+    top: 180px;
+    top: 20vh;
     z-index: 100;
-
+    font-family: Wildy-Sans;
 
 }
 
 #name {
+    display: block;
     color: rgb(255, 255, 255);
-    text-align: center;
     margin-left: -100%;
+
 }
 
 #who{
+  display: block;
     color: rgb(255, 255, 255);
-    text-align: center;
     margin-left: -100%;
+    margin-top: 50px;
+
 }
 
 /* footer */
@@ -289,7 +305,7 @@ a{
     bottom: 0;
     left: 0;
     /* background-color: indigo; */
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     
   }
 
@@ -339,3 +355,21 @@ a{
 
   color: #000000;
 }
+
+@media screen and (max-width: 600px) {
+  #name { 
+    font-size: 50px;
+  } 
+  #who{
+  font-size: 25px;
+  }
+  }
+
+  @media screen and (min-width: 600px) {
+    #name { 
+      font-size: 100px;
+    } 
+    #who{
+    font-size: 50px;
+    }
+    }
