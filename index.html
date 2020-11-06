@@ -152,16 +152,27 @@
         </ul>
     </div>
 
-    <audio controls src="sound/hover_sound.mp3">
-
-    </audio>
+    <audio  src="sound/hover_sound.mp3"> </audio>
+    <audio  src="sound/click_sound.mp3"> </audio>
 
     <script>
         
-        $("li").mouseenter(function() {
+        $("a").mouseenter(function() {
             $("audio")[0].play();
         });
+        $("a").mousedown(function() {
+            $("audio")[1].play();
+        });
+
+        $(".menu__btn").mouseenter(function() {
+            $("audio")[0].play();
+        });
+        $(".menu__btn").mousedown(function() {
+            $("audio")[1].play();
+        });
         
+
+
 
     </script>
 
