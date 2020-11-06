@@ -81,7 +81,7 @@
                     <img class="coloured" alt="twi" src="images/icons/twitch.svg">
                 </a>
             </li>
-            
+
             <li id="500px">
                 <a href="#" target="_blank">
                     <img class="bw" src="images/icons/500px-bw.svg">
@@ -136,13 +136,13 @@
                 <div class="telega">
                     <img src="images/icons/tg.svg">
                     <a href="https://t.me/maxreyv" target="_blank">
-                    <span>Telegram</span>
-                </a>
+                        <span>Telegram</span>
+                    </a>
                 </div>
                 <div class="mail">
                     <img src="images/icons/mail.svg">
                     <a href="mailto:maxreyv@gmail.com" target="_blank">
-                    <span>maxreyv@gmail.com</span>
+                        <span>maxreyv@gmail.com</span>
                     </a>
                 </div>
 
@@ -151,6 +151,19 @@
 
         </ul>
     </div>
+
+    <audio controls src="sound/hover_sound.mp3">
+
+    </audio>
+
+    <script>
+        
+        $("li").mouseenter(function() {
+            $("audio")[0].play();
+        });
+        
+
+    </script>
 
 </body>
 

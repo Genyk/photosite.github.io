@@ -160,8 +160,11 @@ li a{
 
 .bw{
     
-    background-color: rgba(230, 230, 250, 0.25);
-    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
     opacity: 1;
 
 }
@@ -212,8 +215,10 @@ li a{
   
     cursor: pointer;
     z-index: 6;
-    
-    border-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
     background-color:  rgba(230, 230, 250, 0.7);
     /* border: solid 1px rgba(230, 230, 250, 0); */
     transition-duration: .5s;
@@ -264,7 +269,7 @@ li a{
   
     list-style: none;
   
-    background-color: rgba(128, 128, 128, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);
     box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.5);
     transition: .25s ease;
   }
