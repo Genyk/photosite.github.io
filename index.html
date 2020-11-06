@@ -156,11 +156,18 @@
     <audio  src="sound/click_sound.mp3"> </audio>
 
     <script>
-        
-        $("a").mouseenter(function() {
+
+        $(".hmb_footer a").mouseenter(function() {
             $("audio")[0].play();
         });
-        $("a").mousedown(function() {
+        $(".hmb_footer a").mousedown(function() {
+            $("audio")[1].play();
+        });
+
+        $("li").mouseenter(function() {
+            $("audio")[0].play();
+        });
+        $("li").mousedown(function() {
             $("audio")[1].play();
         });
 
