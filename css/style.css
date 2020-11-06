@@ -394,19 +394,27 @@ li a{
 
 @media screen and (max-width: 600px) {
   #name { 
-    font-size: 60px;
+    font-size: 70px;
+    font-size: 22vw;
+
   } 
   #who{
-  font-size: 30px;
+  font-size: 35px;
+  font-size: 11vw;
+
   }
   }
 
   @media screen and (min-width: 600px) {
     #name { 
-      font-size: 120px;
+      font-size: 140px;
+    font-size: 12vw;
+
     } 
     #who{
-      font-size: 60px;
+      font-size: 70px;
+    font-size: 6vw;
+
     }
     }
 
