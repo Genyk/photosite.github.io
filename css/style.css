@@ -186,16 +186,28 @@ li a{
   #menu__toggle:checked ~ .menu__btn  {
     /* border: solid 1px indigo; */
     background-color: rgba(128, 128, 128, 0);
-    transition-duration: .5s;
+    left: 250px ;
+    transition: .3s ease;
+    /* transition-duration: .5s; */
   }
   #menu__toggle:checked ~ .menu__btn >span{
-    background-color:indigo;
+    /* background-color:indigo; */
+    background-color: rgba(128, 128, 128, 0);
+    
+
   }
   #menu__toggle:checked ~ .menu__btn >span::before{
-    background-color:indigo;
+    /* background-color:indigo; */
+    visibility: visible;
+    transform: rotate(45deg);
+    top: 0;
   }
   #menu__toggle:checked ~ .menu__btn >span::after {
-    background-color:indigo;
+    /* background-color:indigo; */
+    visibility: visible;
+    transform: rotate(-45deg);
+    top: 0;
+
   }
 
   #menu__toggle:checked ~ .menu__box {
@@ -226,6 +238,7 @@ li a{
 
   .menu__btn:hover{
     background-color: rgba(128, 128, 128, 0.5);
+
     /* border: solid 1px indigo; */
   }
   
@@ -253,6 +266,12 @@ li a{
   .menu__btn > span::after {
     content: '';
     top: 8px;
+  }
+
+  .menu__btn:hover > span,
+  .menu__btn:hover > span::before,
+  .menu__btn:hover > span::after {
+    background-color:indigo;
   }
   
   .menu__box {
