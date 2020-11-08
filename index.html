@@ -8,12 +8,17 @@
     <meta name="copyright" content="Maksym Ravchak">
     <meta name="author" content="Genyk: Genyk95@gmail.com">
     <!-- <meta name="description" content=""> -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
+    <script type="text/javascript" src="js/glide.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="css/home.css">
     <link rel="stylesheet" type="text/css" href="css/glide.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="js/glide.js"></script>
+    
+    
     <title>Maksym Ravchak - photographer</title>
     <link rel="shortcut icon" href="images/icons/mr.png">
 </head>
@@ -21,11 +26,11 @@
 <body>
     <div id="caption_slider">
         <div class="slider_container">
-            <img src="images/backimg/6.png">
-            <img src="images/backimg/2.jpg">
-            <img src="images/backimg/3.jpg">
-            <img src="images/backimg/4.jpg">
-            <img src="images/backimg/5.jpg">
+            <img src="images/backimg/1.jpg" >
+            <img src="images/backimg/2.jpg" >
+            <img src="images/backimg/3.jpg" >
+            <img src="images/backimg/4.jpg" >
+            <img src="images/backimg/5.jpg" >
         </div>
         <div class="nomove"></div>
     </div>
@@ -49,7 +54,6 @@
         <span id="who">
             photographer
         </span>
-
     </div>
 
 
@@ -119,8 +123,6 @@
         </ul>
 
 
-
-
     </div>
 
     <div class="hamburger-menu">
@@ -130,9 +132,9 @@
         </label>
 
         <ul class="menu__box">
-            <li><a class="menu__item" href="#">HOME</a></li>
-            <li><a class="menu__item" href="#">ABOUT ME</a></li>
-            <li><a class="menu__item" href="#">GALLERY</a></li>
+            <li><a class="menu__item" href="index.html">HOME</a></li>
+            <li><a class="menu__item" href="structure/about.html">ABOUT ME</a></li>
+            <li><a class="menu__item" href="structure/gallery.html">GALLERY</a></li>
             <!-- <li><a class="menu__item" href="#">CONTACT ME</a></li> -->
 
 
@@ -150,42 +152,14 @@
                     </a>
                 </div>
 
-
             </div>
 
         </ul>
     </div>
 
-    <audio  src="sound/hover_sound.mp3"> </audio>
-    <audio  src="sound/click_sound.mp3"> </audio>
-
-    <script>
-
-        $(".hmb_footer a").mouseenter(function() {
-            $("audio")[0].play();
-        });
-        $(".hmb_footer a").mousedown(function() {
-            $("audio")[1].play();
-        });
-
-        $("li").mouseenter(function() {
-            $("audio")[0].play();
-        });
-        $("li").mousedown(function() {
-            $("audio")[1].play();
-        });
-
-        $(".menu__btn").mouseenter(function() {
-            $("audio")[0].play();
-        });
-        $(".menu__btn").mousedown(function() {
-            $("audio")[1].play();
-        });
-        
-
-
-
-    </script>
+    <audio src="sound/hover_sound.mp3"></audio>
+    <audio src="sound/click_sound.mp3"></audio>
+    <script type="text/javascript" src="js/sound.js"></script>
 
 </body>
 
