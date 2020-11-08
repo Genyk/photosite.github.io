@@ -20,6 +20,7 @@
 
 */
 
+
 ;(function($, window, document, undefined){
   $.fn.glide = function(options)
   {
