@@ -34,7 +34,7 @@ function addImages(category, num){
 
     $(function imageloop(){
       $("<img />").attr('src', dir + i + fileextension ).appendTo(".photos")
-      .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,4) +'"/>');
+      .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,4) +'"/>').attr("loading","lazy");
 
       if (i==num){
       }
@@ -62,3 +62,40 @@ function getRandomInt(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
   }
+
+// lazyload
+//   var observer = new IntersectionObserver(
+//     (entries, observer) => {
+//         entries.forEach(entry => {
+//             if (entry.intersectionRatio > 0.0) {
+//                 img = entry.target;
+//                 if (!img.hasAttribute('src')) {
+//                     alert('will load the image!!!');
+//                     img.setAttribute('src', img.dataset.src);
+//                 }
+//             }
+//         });
+//     },
+//     {}
+// )
+// for (let img of document.getElementsByTagName('img')) {
+//     observer.observe(img);
+// }
+
+
+// $(document).ready(function() {
+// $(".photos img").click(function (e) {        
+//   $(this).toggleClass('full');
+// });
+// });
+
+
+$(document).ready(function() {
+$(".photos img").click(function (e) { 
+  var photo = '<div class="full"><div class="bg"><img src="'+$(this).attr("src")+'" /> </div></div>';
+  $("body").append(photo);
+  $(".full img").click(function(){
+    $('.full').remove();
+  });
+});
+});
