@@ -26,7 +26,8 @@ body {
   #menu__toggle:checked ~ .menu__btn  {
     /* border: solid 1px indigo; */
     /* background-color: rgba(128, 128, 128, 0); */
-    background-color: rgba(255, 255, 255, 0.3);
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    background-color:rgba(0, 0, 0, 0.7);
 
     transition: .25s ease;
     /* transition-duration: .5s; */
@@ -34,22 +35,33 @@ body {
   #menu__toggle:checked ~ .menu__btn >span{
     /* background-color:indigo; */
     background-color: rgba(128, 128, 128, 0);
-    
-
   }
   #menu__toggle:checked ~ .menu__btn >span::before{
-    /* background-color:indigo; */
+    background-color:rgb(200, 200, 200);
     visibility: visible;
     transform: rotate(45deg);
     top: 0;
   }
   #menu__toggle:checked ~ .menu__btn >span::after {
-    /* background-color:indigo; */
+    background-color:rgb(200, 200, 200);
     visibility: visible;
     transform: rotate(-45deg);
     top: 0;
+  }
+
+  #menu__toggle:checked:hover ~ .menu__btn >span::after{
+    background-color:indigo;
+  }
+  #menu__toggle:checked:hover ~ .menu__btn >span::before{
+    background-color:indigo;
+  }
+  #menu__toggle:checked ~ .menu__btn:hover  {
+    background-color: rgba(128, 128, 128, 0.5);
 
   }
+
+
+
 
   #menu__toggle:checked ~ .menu__box {
     visibility: visible;
@@ -78,7 +90,7 @@ body {
   }
 
   .menu__btn:hover{
-    background-color: rgba(128, 128, 128, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
 
     /* border: solid 1px indigo; */
   }
@@ -88,12 +100,9 @@ body {
   .menu__btn > span::after {
     display: block;
     position: absolute;
-    
     width: 26px;
     height: 3px;
     background-color:#333;
-    
-  
     transition-duration: .25s;
   }
   .menu__btn > span
@@ -114,6 +123,7 @@ body {
   .menu__btn:hover > span::after {
     background-color:indigo;
   }
+
   
   .menu__box {
     display: block;
@@ -129,7 +139,7 @@ body {
   
     list-style: none;
   
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.5);
     transition: .25s ease;
   }
@@ -138,7 +148,7 @@ body {
     display: block;
     padding: 12px 24px;
   
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
   
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
@@ -243,11 +253,11 @@ body {
 
 .hmb_footer div span{
   position: relative;
-  color: #000000;
+  color: white;
 }
 
 .hmb_footer div span:hover{
-  color: lightgray;
+  color: indigo;
 }
 
 .hmb_footer .social{
