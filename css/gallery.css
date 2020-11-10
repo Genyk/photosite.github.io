@@ -11,19 +11,17 @@
 .filter-button
 {
     font-size: 18px;
-    border: 1px solid indigo;
-    border-radius: 5px;
-    text-align: center;
-    color: purple ;
-    margin-bottom: 30px;
-
+    /* border: 1px solid indigo; */
+    text-align: left;
+    color: white ;
+    margin-bottom: 0px;
+    cursor: pointer;
 }
+
 .filter-button:hover
 {
     font-size: 18px;
     border: 1px solid indigo;
-    border-radius: 5px;
-    text-align: center;
     color: #ffffff;
     background-color: indigo;
 
@@ -34,10 +32,10 @@
     color: white;
 }
 
-.port-image
+/* .port-image
 {
     width: 100%;
-}
+} */
 
 .gallery_product
 {
@@ -48,11 +46,33 @@
 
 /*  */
   .container{
-    display: block;
+    /* display: block; */
+    position: relative;
+    /* margin: 10px; */
+
   /* --img-bg-color: rgb(240, 240, 240); */
   }
 
-  .photos {
+  .gallery{
+    position: relative;
+    display: grid;
+    /* flex-direction: row; */
+    grid-template-columns: max-content 1fr;
+  }
+
+  .filters{
+    display: flex;
+    flex-direction: column;
+    width: 200px; 
+    padding: 5px;
+  }
+
+
+  .photos{
+    position: relative;
+    display: block;
+    /* width: 100%; */
+
     /* Prevent vertical gaps */
     line-height: 0;
     
@@ -92,12 +112,23 @@
 
   .height1{
       height: 50%;
+      height: 27vh;
   }
   .height2{
-      height: 60%;
+      height: 55%;
+      height: 37vh;
   }
   .height3{
-      height: 75%;
+      height: 60%;
+      height: 33vh;
+  }
+  .height4{
+      height: 65%;
+      height: 24vh;
+  }
+  .height5{
+      height: 70%;
+      height: 30vh;
   }
 
   .full {
@@ -118,7 +149,7 @@
     height: 100%;
     
 
-    background-color: rgba(0, 0, 0, 0.5)
+    background-color: rgba(0, 0, 0, 0.9)
   }
 
   .full .bg img
@@ -137,31 +168,52 @@
 
 
  
- @media (max-width: 1200px) {
+ @media screen and (max-width: 1200px) {
    .photos {
    -moz-column-count:    4;
    -webkit-column-count: 4;
    column-count:         4;
    }
  }
- @media (max-width: 1000px) {
+ @media screen and (max-width: 1000px) {
    .photos {
    -moz-column-count:    3;
    -webkit-column-count: 3;
    column-count:         3;
    }
  }
- @media (max-width: 800px) {
+ @media screen and (max-width: 800px) {
    .photos {
    -moz-column-count:    2;
    -webkit-column-count: 2;
    column-count:         2;
    }
+
+
  }
- @media (max-width: 400px) {
+ @media screen and (max-width: 400px) {
    .photos {
    -moz-column-count:    1;
    -webkit-column-count: 1;
    column-count:         1;
    }
+
+
  }
+
+@media screen and (max-width: 600px) 
+{
+  .gallery{
+  grid-template-columns: auto;
+  }
+  .filters{
+    width: auto; 
+    display: flex;
+    flex-direction: row;
+    /* width: 100vw; */
+    flex-wrap: wrap;
+    text-align: left;
+  }
+}
+
+
