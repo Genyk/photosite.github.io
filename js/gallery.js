@@ -34,7 +34,7 @@ function addImages(category, num){
 
     $(function imageloop(){
       $("<img />").attr('src', dir + i + fileextension ).appendTo(".photos")
-      .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,4) +'"/>').attr("loading","lazy");
+      .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>').attr("loading","lazy");
 
       if (i==num){
       }
@@ -44,10 +44,12 @@ function addImages(category, num){
       };
     });   
   }
+  
   addImages("portrait",2);
   addImages("art_nu",2);
   addImages("reportage",2);
   addImages("wedding",2);
+  addImages("lookbook",5);
 
 //   
 // var photos = document.querySelector('.photos');
