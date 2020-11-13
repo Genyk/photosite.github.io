@@ -14,14 +14,19 @@ $(document).ready(function(){
 //            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
             $(".filter").not('.'+value).hide('3000');
             $('.filter').filter('.'+value).show('3000');
+// $(this).removeClass("btn");
+
             
         }
+        
+            if ($(".filter-button").removeClass("active")) {
+        $(this).removeClass("active");
+        }
+        $(this).addClass("active");
     });
+
     
-    if ($(".filter-button").removeClass("active")) {
-$(this).removeClass("active");
-}
-$(this).addClass("active");
+
 
 });
 

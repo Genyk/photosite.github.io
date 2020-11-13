@@ -49,6 +49,7 @@ body{
     display: block;
     color: rgba(255, 255, 255, 0.8);
     margin-left: -100%;
+  text-shadow:0 0 10px rgba(0, 0, 0, 0.8);
     /* letter-spacing: 0.125em; */
     /* font-style: italic; */
     /* font-weight: unset; */
@@ -60,6 +61,8 @@ body{
   display: block;
     color: rgba(255, 255, 255, 0.8);
     margin-left: -100%;
+  text-shadow:0 0 10px rgba(0, 0, 0, 0.8);
+
     /* letter-spacing: 0.1em; */
     /* -webkit-text-stroke: 1px  rgba(76, 0, 130, 0.7); */
 
