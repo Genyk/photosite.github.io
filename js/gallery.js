@@ -81,7 +81,7 @@ $(document).ready(function(){
 
 function addImages(){
 
-var dir = "images/gallery/art_nu/";
+var dir = "images/gallery/art_nu/1.jpg";
 var fileextension = ".jpg";
 
 $.ajax({
