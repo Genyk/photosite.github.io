@@ -98,6 +98,10 @@ h1{
   border-left: 3px solid indigo;
   /* left: 9px; */
 }
+.active:hover:before{
+  border-left: 3px solid indigo;
+  /* left: 9px; */
+}
 
 
 
@@ -184,7 +188,7 @@ h1{
   } */
 
 
-  .photos img {
+  .content {
     object-fit: cover;
     cursor: pointer;
     width: 100%;
@@ -192,7 +196,7 @@ h1{
     transition: 0.25s;
   }
 
-  .photos img:hover {
+  .content:hover {
     opacity: 0.5;
     transition: 0.5s;
     transform: scale(1.1);
