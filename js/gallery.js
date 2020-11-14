@@ -38,6 +38,9 @@ function addImages(category, num){
     var i = "1";
 
     $(function imageloop(){
+      $.get(dir+i+fileextension).fail(function() { 
+        return;
+      });
       if(category=="video")
       {
         $("<video />").attr('src', dir + i + ".mp4" ).addClass("content").appendTo(".photos")
@@ -52,9 +55,13 @@ function addImages(category, num){
             // }
       }
 
-      $.get(dir+i+fileextension, function(status) {  
-        console.log("File request status: "+status); 
-     });
+
+  //     $.get(dir+i+fileextension, function(status) {  
+  //       console.log("File request status: "+status); 
+  //    });
+  //    if (request.status === 404) {
+  //     console.log("file"+ url + " doesn't exist");
+  // } 
 
       // img = dir+i+fileextension;
       // img.onerror = function() { console.log('Error'+i); };
