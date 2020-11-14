@@ -38,23 +38,62 @@ function addImages(category, num){
     var i = "1";
 
     $(function imageloop(){
-      $("<img />").attr('src', dir + i + fileextension ).appendTo(".photos")
+      if(category=="video")
+      {
+        $("<video />").attr('src', dir + i + ".mp4" ).addClass("content").appendTo(".photos")
+        .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>');
+      }
+      else
+      {
+      $("<img />").attr('src', dir + i + fileextension ).addClass("content").appendTo(".photos")
       .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>').attr("loading","lazy");
+            // if ( img == null ) {
+            //   console.log("error")
+            // }
+      }
 
+      $.get(dir+i+fileextension, function(status) {  
+        console.log("File request status: "+status); 
+     });
+
+      // img = dir+i+fileextension;
+      // img.onerror = function() { console.log('Error'+i); };
       if (i==num){
       }
       else{
         i++;
         imageloop();
       };
+
+
     });   
   }
+
+  // function addvideo(num){
+  //   var dir = "../images/gallery/video/";
+  //   var fileextension = ".mp4";
+  //   var i = "1";
+
+  //   $(function vidloop(){
+  //     $("<video />").attr('src', dir + i + fileextension ).appendTo(".photos")
+  //     .wrapAll('<div class="gallery_product '+'filter video height'+getRandomInt(1,6) +'"/>');
+
+  //     if (i==num){
+  //     }
+  //     else{
+  //       i++;
+  //       vidloop();
+  //     };
+  //   });   
+  // }
   
   addImages("portrait",2);
   addImages("art_nu",2);
   addImages("reportage",2);
-  addImages("wedding",2);
+  addImages("wedding",5);
   addImages("lookbook",5);
+  addImages("video",1);
+
 
 //   
 // var photos = document.querySelector('.photos');
@@ -96,12 +135,22 @@ function getRandomInt(min, max) {
 // });
 // });
 
-
+// open content
 $(document).ready(function() {
-$(".photos img").click(function (e) { 
-  var photo = '<div class="full"><div class="bg"><img src="'+$(this).attr("src")+'" /> </div></div>';
-  $("body").append(photo);
-  $(".full img").click(function(){
+$(".content").click(function (e) { 
+  var tagname=this.tagName;
+  if (tagname=="VIDEO"){
+    var show = tagname+' controls="controls"';
+  }
+  else{
+    var show = tagname;
+  }
+  var cont = '<div class="full"><div class="bg"><'+show+' src="'+$(this).attr("src")+'" /> </div></div>';
+  $("body").append(cont);
+  $(".full "+tagname).click(function(){
+    if(tagname=="VIDEO"){
+      $('.full VIDEO').get(0).load();
+    }
     $('.full').remove();
   });
 });
