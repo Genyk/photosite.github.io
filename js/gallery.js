@@ -81,26 +81,12 @@ $(document).ready(function(){
 
 function addImages(){
 
-var dir = "images/gallery/art_nu/";
+var dir = "photosite.github.io/images/gallery/art_nu/";
 var fileextension = ".jpg";
 
-// $.ajax({
-//   url: dir,
-//   success: function (data) {
-//     console.log("OK");
-//       //List all .png file names in the page
-//       $(data).find("a:contains(" + fileextension + ")").each(function () {
-//           var filename = this.href.replace(window.location.host, "").replace("http://", "");
-//           console.log("filename "+filename);
-//           console.log("host "+window.location.host);
-//           console.log("href "+this.href);
-//       $("<img />").attr('src', filename ).addClass("content").appendTo(".photos")
-//       .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>').attr("loading","lazy");
-//       });
-//   }
-// });
-
-$.get(dir).done(function(data){
+$.ajax({
+  url: dir,
+  success: function (data) {
     console.log("OK");
       //List all .png file names in the page
       $(data).find("a:contains(" + fileextension + ")").each(function () {
@@ -111,8 +97,23 @@ $.get(dir).done(function(data){
       $("<img />").attr('src', filename ).addClass("content").appendTo(".photos")
       .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>').attr("loading","lazy");
       });
+  }
 });
 }
+
+// $.get(dir).done(function(data){
+//     console.log("OK");
+//       //List all .png file names in the page
+//       $(data).find("a:contains(" + fileextension + ")").each(function () {
+//           var filename = this.href.replace(window.location.host, "");
+//           console.log("filename "+filename);
+//           console.log("host "+window.location.host);
+//           console.log("href "+this.href);
+//       $("<img />").attr('src', filename ).addClass("content").appendTo(".photos")
+//       .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>').attr("loading","lazy");
+//       });
+// });
+// }
 
 addImages();
 
