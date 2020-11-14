@@ -81,8 +81,8 @@ $(document).ready(function(){
 
 function addImages(){
 
-var dir = "images/gallery/art_nu/";
-var fileextension = ".png";
+var dir = "../images/gallery/art_nu/";
+var fileextension = ".jpg";
 
 $.ajax({
   url: dir,
@@ -120,7 +120,7 @@ addImages();
   //   });   
   // }
   
-  
+
   // addImages("portrait",2);
   // addImages("art_nu",2);
   // addImages("reportage",2);
