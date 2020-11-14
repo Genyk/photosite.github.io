@@ -32,50 +32,75 @@ $(document).ready(function(){
 
 
 
-function addImages(category, num){
-    var dir = "../images/gallery/"+category+"/";
-    var fileextension = ".jpg";
-    var i = "1";
 
-    $(function imageloop(){
-      $.get(dir+i+fileextension).fail(function() { 
-        console.log("error dir "+category+" file "+i);
-        return;
-      });
-      if(category=="video")
-      {
-        $("<video />").attr('src', dir + i + ".mp4" ).addClass("content").appendTo(".photos")
-        .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>');
-      }
-      else
-      {
-      $("<img />").attr('src', dir + i + fileextension ).addClass("content").appendTo(".photos")
+
+// function addImages(category, num){
+//     var dir = "../images/gallery/"+category+"/";
+//     var fileextension = ".jpg";
+//     var i = "1";
+
+//     $(function imageloop(){
+//       $.get(dir+i+fileextension).fail(function() { 
+//         console.log("error dir "+category+" file "+i);
+//         return;
+//       });
+//       if(category=="video")
+//       {
+//         $("<video />").attr('src', dir + i + ".mp4" ).addClass("content").appendTo(".photos")
+//         .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>');
+//       }
+//       else
+//       {
+//       $("<img />").attr('src', dir + i + fileextension ).addClass("content").appendTo(".photos")
+//       .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>').attr("loading","lazy");
+//             // if ( img == null ) {
+//             //   console.log("error")
+//             // }
+//       }
+
+
+//   //     $.get(dir+i+fileextension, function(status) {  
+//   //       console.log("File request status: "+status); 
+//   //    });
+//   //    if (request.status === 404) {
+//   //     console.log("file"+ url + " doesn't exist");
+//   // } 
+
+//       // img = dir+i+fileextension;
+//       // img.onerror = function() { console.log('Error'+i); };
+//       if (i==num){
+//       }
+//       else{
+//         i++;
+//         imageloop();
+//       };
+
+
+//     });   
+//   }
+
+function addImages(){
+
+var dir = "images/gallery/art_nu/";
+var fileextension = ".png";
+
+$.ajax({
+  url: dir,
+  success: function (data) {
+      //List all .png file names in the page
+      $(data).find("a:contains(" + fileextension + ")").each(function () {
+          var filename = this.href.replace(window.location.host, "").replace("http://", "");
+      $("<img />").attr('src', filename ).addClass("content").appendTo(".photos")
       .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>').attr("loading","lazy");
-            // if ( img == null ) {
-            //   console.log("error")
-            // }
-      }
 
-
-  //     $.get(dir+i+fileextension, function(status) {  
-  //       console.log("File request status: "+status); 
-  //    });
-  //    if (request.status === 404) {
-  //     console.log("file"+ url + " doesn't exist");
-  // } 
-
-      // img = dir+i+fileextension;
-      // img.onerror = function() { console.log('Error'+i); };
-      if (i==num){
-      }
-      else{
-        i++;
-        imageloop();
-      };
-
-
-    });   
+          // $("body").append("<img src='" + dir + filename + "'>");
+      });
   }
+});
+}
+
+addImages();
+
 
   // function addvideo(num){
   //   var dir = "../images/gallery/video/";
@@ -95,12 +120,13 @@ function addImages(category, num){
   //   });   
   // }
   
-  addImages("portrait",2);
-  addImages("art_nu",2);
-  addImages("reportage",2);
-  addImages("wedding",5);
-  addImages("lookbook",5);
-  addImages("video",1);
+  
+  // addImages("portrait",2);
+  // addImages("art_nu",2);
+  // addImages("reportage",2);
+  // addImages("wedding",5);
+  // addImages("lookbook",5);
+  // addImages("video",1);
 
 
 //   
