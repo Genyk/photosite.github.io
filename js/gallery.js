@@ -39,6 +39,7 @@ function addImages(category, num){
 
     $(function imageloop(){
       $.get(dir+i+fileextension).fail(function() { 
+        console.log("error dir "+category+" file "+i);
         return;
       });
       if(category=="video")
