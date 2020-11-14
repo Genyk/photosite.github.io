@@ -81,12 +81,13 @@ $(document).ready(function(){
 
 function addImages(){
 
-var dir = "../images/gallery/art_nu/";
+var dir = "/images/gallery/art_nu/";
 var fileextension = ".jpg";
 
 $.ajax({
   url: dir,
   success: function (data) {
+    console.log("OK");
       //List all .png file names in the page
       $(data).find("a:contains(" + fileextension + ")").each(function () {
           var filename = this.href.replace(window.location.host, "").replace("http://", "");
