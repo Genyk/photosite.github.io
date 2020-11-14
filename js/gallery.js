@@ -90,6 +90,9 @@ $.ajax({
       //List all .png file names in the page
       $(data).find("a:contains(" + fileextension + ")").each(function () {
           var filename = this.href.replace(window.location.host, "").replace("http://", "");
+          console.log("filename "+filename);
+          console.log("host "+window.location.host);
+          console.log("href "+this.href);
       $("<img />").attr('src', filename ).addClass("content").appendTo(".photos")
       .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>').attr("loading","lazy");
 
