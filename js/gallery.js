@@ -77,11 +77,11 @@ $(document).ready(function () {
 //     });   
 //   }
 
-function addImages() {
+function addImages(category) {
 
-  var dir = "images/gallery/art_nu/";
+  var dir = "images/gallery/"+category+"/";
   var fileextension = ".jpg";
-  var i = "1";
+  var i = "0";
   function imgloop() {
     $.get(dir + i + fileextension).done(function(){
       $("<img />").attr('src', dir + i + fileextension ).addClass("content").appendTo(".photos")
@@ -100,7 +100,7 @@ function addImages() {
 }
 
 
-addImages();
+addImages("art_nu");
 
 
 // function addvideo(num){
