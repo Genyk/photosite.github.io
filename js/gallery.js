@@ -29,7 +29,6 @@ $(document).ready(function () {
 $.get("direader.php","img", function(data) {
   console.log(data); //"data" contains whatever someScript.php returned
   $(".photos").append(data);
-
 });
 
 
