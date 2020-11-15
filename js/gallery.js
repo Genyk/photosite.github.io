@@ -86,14 +86,15 @@ var fileextension = ".jpg";
 var i = "1";
 
 $.get(dir+i+fileextension).fail(function() { 
-          console.log("error dir "+category+" file "+i);
+          console.log("error dir "+dir+" file "+i);
           return;
 });
 
 i++;
 
 if(i<5)
-{addImages();}
+{addImages();
+console.log("i = "+i);}
 }
 
 
