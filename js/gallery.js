@@ -81,35 +81,19 @@ $(document).ready(function(){
 
 function addImages(){
 
-var dir = "images/gallery/art_nu/1.jpg";
+var dir = "images/gallery/art_nu/";
 var fileextension = ".jpg";
+var i = "1";
 
-$.ajax({
-  url: dir,
-  
-  success: function (data) {
-    console.log("OK");
-    console.log(data);
-      // $(data).find("a:contains(" + fileextension + ")").each(function () {
-      //     var filename = this.href.replace(window.location.host, "").replace("https://", "");
-      //     console.log("filename "+filename);
-      //     console.log("host "+window.location.host);
-      //     console.log("href "+this.href);
-      // $("<img />").attr('src', filename ).addClass("content").appendTo(".photos")
-      // .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>').attr("loading","lazy");
-      // });
-  }
+$.get(dir+i+fileextension).fail(function() { 
+          console.log("error dir "+category+" file "+i);
+          return;
 });
 
+i++;
 
-
-$.get(dir).done(function (data) {
-    console.log("OK");
-    console.log(data);
-  });
-
-
-
+if(i<5)
+{addImages();}
 }
 
 
