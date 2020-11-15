@@ -84,15 +84,16 @@ function addImages(category) {
   var i = "1";
   function imgloop() {
     $.get(dir + i + fileextension).fail(function() {
-      console.log("error dir " + dir + " file " + i);
+      console.log("fail dir " + dir + " file " + i);
       return true;
     }).done(function(){
-      $("<img />").attr('src', dir + i + fileextension ).addClass("content").appendTo(".photos")
-      .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>').attr("loading","lazy");
+      // $("<img />").attr('src', dir + i + fileextension ).addClass("content").appendTo(".photos")
+      // .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>').attr("loading","lazy");
+    console.log("Done, show "+i);
     });
   }
   while (i < 10) {
-    console.log("i = " + i);
+    console.log("i in while = " + i);
     if(imgloop())
     {
       return;
