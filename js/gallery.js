@@ -26,7 +26,7 @@ $(document).ready(function () {
 
 
 
-$.post("direader.php", function(data) {
+$.get("direader.php", function(data) {
   console.log(data); //"data" contains whatever someScript.php returned
 });
 
