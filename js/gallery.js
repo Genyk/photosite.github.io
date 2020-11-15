@@ -81,7 +81,7 @@ function addImages(category) {
 
   var dir = "images/gallery/"+category+"/";
   var fileextension = ".jpg";
-  var i = "0";
+  var i = "1";
   function imgloop() {
     $.get(dir + i + fileextension).done(function(){
       $("<img />").attr('src', dir + i + fileextension ).addClass("content").appendTo(".photos")
@@ -94,7 +94,10 @@ function addImages(category) {
   }
   while (i < 10) {
     console.log("i = " + i);
-    imgloop();
+    if(imgloop())
+    {
+      break;
+    }
     i++;
   }
 }
