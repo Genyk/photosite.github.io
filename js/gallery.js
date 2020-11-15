@@ -85,12 +85,11 @@ function addImages(category) {
   function imgloop() {
     $.get(dir + i + fileextension).fail(function() {
       console.log("error dir " + dir + " file " + i);
-      return;
+      return true;
     }).done(function(){
       $("<img />").attr('src', dir + i + fileextension ).addClass("content").appendTo(".photos")
       .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>').attr("loading","lazy");
     });
-
   }
   while (i < 10) {
     console.log("i = " + i);
