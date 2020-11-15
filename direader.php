@@ -1,23 +1,25 @@
 <?php
-function listFolderFiles($dir){
-    $ffs = scandir($dir);
+$files = glob("images/art_nu/*.{jpg,gif,png}", GLOB_BRACE);
+return $files;
+// ---
+// function listFolderFiles($dir){
+//     $ffs = scandir($dir);
 
-    unset($ffs[array_search('.', $ffs, true)]);
-    unset($ffs[array_search('..', $ffs, true)]);
+//     unset($ffs[array_search('.', $ffs, true)]);
+//     unset($ffs[array_search('..', $ffs, true)]);
 
-    // prevent empty ordered elements
-    if (count($ffs) < 1)
-        return;
+//     if (count($ffs) < 1)
+//         return;
 
-    echo '<ol>';
-    foreach($ffs as $ff){
+//     echo '<ol>';
+//     foreach($ffs as $ff){
         
-        echo '<li>'.$ff;
-        if(is_dir($dir.'/'.$ff)) listFolderFiles($dir.'/'.$ff);
-        echo '</li>';
-    }
-    echo '</ol>';
-}
+//         echo '<li>'.$ff;
+//         if(is_dir($dir.'/'.$ff)) listFolderFiles($dir.'/'.$ff);
+//         echo '</li>';
+//     }
+//     echo '</ol>';
+// }
 
-listFolderFiles('images');
+// listFolderFiles('images');
 ?>
