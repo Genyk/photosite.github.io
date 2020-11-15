@@ -22,13 +22,13 @@ $(document).ready(function () {
     }
     $(this).addClass("active");
   });
-
-
-
-
 });
 
 
+
+$.post("php/direader.php", function(data) {
+  console.log(data); //"data" contains whatever someScript.php returned
+});
 
 
 
@@ -76,7 +76,7 @@ $(document).ready(function () {
 
 //     });   
 //   }
-
+/*--------------------getimgs
 function addImages(category) {
 
   var dir = "images/gallery/"+category+"/";
@@ -111,7 +111,7 @@ function addImages(category) {
 
 
 addImages("lookbook");
-
+getimgs----------------------*/ 
 
 // function addvideo(num){
 //   var dir = "../images/gallery/video/";
