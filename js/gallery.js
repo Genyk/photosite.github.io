@@ -81,21 +81,28 @@ function addImages(category) {
 
   var dir = "images/gallery/"+category+"/";
   var fileextension = ".jpg";
-  var i = "1";
-  function imgloop() {
-    $.get(dir + i + fileextension).fail(function() {
-      console.log("fail dir " + dir + " file " + i);
-      return true;
+  var i = 1;
+  function imgloop(n) {
+    // ,async: false
+    $.ajax({url:dir + n + fileextension}).fail(function() {
+      console.log("fail dir " + dir + " file " + n);
+      n=-1;
+      console.log("n="+n);
     }).done(function(){
       // $("<img />").attr('src', dir + i + fileextension ).addClass("content").appendTo(".photos")
       // .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>').attr("loading","lazy");
-    console.log("Done, show "+i);
-    });
+    console.log("Done, show "+n);
+  });
+  console.log("return n = "+n);
+  return n;
   }
   while (i < 10) {
     console.log("i in while = " + i);
-    if(imgloop())
+    console.log("imgloop = "+imgloop(i));
+
+    if(imgloop(i)=="-1")
     {
+      console.log("return");
       return;
     }
     i++;
