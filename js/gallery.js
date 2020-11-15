@@ -83,14 +83,17 @@ function addImages() {
   var fileextension = ".jpg";
   var i = "1";
   function imgloop() {
-    $.get(dir + i + fileextension).fail(function () {
+    $.get(dir + i + fileextension).done(function(){
+      $("<img />").attr('src', dir + i + fileextension ).addClass("content").appendTo(".photos")
+      .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>').attr("loading","lazy");
+    }).fail(function () {
       console.log("error dir " + dir + " file " + i);
       return;
     });
 
   }
   i++;
-  if (i < 5) {
+  if (i < 100) {
     console.log("i = " + i);
     imgloop();
   }
