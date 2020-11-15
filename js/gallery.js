@@ -95,7 +95,7 @@ function addImages(category) {
     console.log("i = " + i);
     if(imgloop())
     {
-      break;
+      return;
     }
     i++;
   }
