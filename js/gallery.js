@@ -1,31 +1,29 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-    $(".filter-button").click(function(){
-        var value = $(this).attr('data-filter');
-        
-        if(value == "all")
-        {
-            //$('.filter').removeClass('hidden');
-            $('.filter').show('1000');
-        }
-        else
-        {
-//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
-//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
-            $(".filter").not('.'+value).hide('3000');
-            $('.filter').filter('.'+value).show('3000');
-// $(this).removeClass("btn");
+  $(".filter-button").click(function () {
+    var value = $(this).attr('data-filter');
 
-            
-        }
-        
-            if ($(".filter-button").removeClass("active")) {
-        $(this).removeClass("active");
-        }
-        $(this).addClass("active");
-    });
+    if (value == "all") {
+      //$('.filter').removeClass('hidden');
+      $('.filter').show('1000');
+    }
+    else {
+      //            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+      //            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+      $(".filter").not('.' + value).hide('3000');
+      $('.filter').filter('.' + value).show('3000');
+      // $(this).removeClass("btn");
 
-    
+
+    }
+
+    if ($(".filter-button").removeClass("active")) {
+      $(this).removeClass("active");
+    }
+    $(this).addClass("active");
+  });
+
+
 
 
 });
@@ -79,53 +77,54 @@ $(document).ready(function(){
 //     });   
 //   }
 
-function addImages(){
+function addImages() {
 
-var dir = "images/gallery/art_nu/";
-var fileextension = ".jpg";
-var i = "1";
+  var dir = "images/gallery/art_nu/";
+  var fileextension = ".jpg";
+  var i = "1";
+  function imgloop() {
+    $.get(dir + i + fileextension).fail(function () {
+      console.log("error dir " + dir + " file " + i);
+      return;
+    });
 
-$.get(dir+i+fileextension).fail(function() { 
-          console.log("error dir "+dir+" file "+i);
-          return;
-});
-
-i++;
-
-if(i<5)
-{addImages();
-console.log("i = "+i);}
+  }
+  i++;
+  if (i < 5) {
+    console.log("i = " + i);
+    imgloop();
+  }
 }
 
 
 addImages();
 
 
-  // function addvideo(num){
-  //   var dir = "../images/gallery/video/";
-  //   var fileextension = ".mp4";
-  //   var i = "1";
+// function addvideo(num){
+//   var dir = "../images/gallery/video/";
+//   var fileextension = ".mp4";
+//   var i = "1";
 
-  //   $(function vidloop(){
-  //     $("<video />").attr('src', dir + i + fileextension ).appendTo(".photos")
-  //     .wrapAll('<div class="gallery_product '+'filter video height'+getRandomInt(1,6) +'"/>');
+//   $(function vidloop(){
+//     $("<video />").attr('src', dir + i + fileextension ).appendTo(".photos")
+//     .wrapAll('<div class="gallery_product '+'filter video height'+getRandomInt(1,6) +'"/>');
 
-  //     if (i==num){
-  //     }
-  //     else{
-  //       i++;
-  //       vidloop();
-  //     };
-  //   });   
-  // }
-  
+//     if (i==num){
+//     }
+//     else{
+//       i++;
+//       vidloop();
+//     };
+//   });   
+// }
 
-  // addImages("portrait",2);
-  // addImages("art_nu",2);
-  // addImages("reportage",2);
-  // addImages("wedding",5);
-  // addImages("lookbook",5);
-  // addImages("video",1);
+
+// addImages("portrait",2);
+// addImages("art_nu",2);
+// addImages("reportage",2);
+// addImages("wedding",5);
+// addImages("lookbook",5);
+// addImages("video",1);
 
 
 //   
@@ -137,10 +136,10 @@ addImages();
 // });
 
 function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-  }
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
 // lazyload
 //   var observer = new IntersectionObserver(
@@ -169,22 +168,22 @@ function getRandomInt(min, max) {
 // });
 
 // open content
-$(document).ready(function() {
-$(".content").click(function (e) { 
-  var tagname=this.tagName;
-  if (tagname=="VIDEO"){
-    var show = tagname+' controls="controls"';
-  }
-  else{
-    var show = tagname;
-  }
-  var cont = '<div class="full"><div class="bg"><'+show+' src="'+$(this).attr("src")+'" /> </div></div>';
-  $("body").append(cont);
-  $(".full "+tagname).click(function(){
-    if(tagname=="VIDEO"){
-      $('.full VIDEO').get(0).load();
+$(document).ready(function () {
+  $(".content").click(function (e) {
+    var tagname = this.tagName;
+    if (tagname == "VIDEO") {
+      var show = tagname + ' controls="controls"';
     }
-    $('.full').remove();
+    else {
+      var show = tagname;
+    }
+    var cont = '<div class="full"><div class="bg"><' + show + ' src="' + $(this).attr("src") + '" /> </div></div>';
+    $("body").append(cont);
+    $(".full " + tagname).click(function () {
+      if (tagname == "VIDEO") {
+        $('.full VIDEO').get(0).load();
+      }
+      $('.full').remove();
+    });
   });
-});
 });
