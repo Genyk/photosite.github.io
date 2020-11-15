@@ -83,12 +83,12 @@ function addImages(category) {
   var fileextension = ".jpg";
   var i = "1";
   function imgloop() {
-    $.get(dir + i + fileextension).done(function(){
-      $("<img />").attr('src', dir + i + fileextension ).addClass("content").appendTo(".photos")
-      .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>').attr("loading","lazy");
-    }).fail(function () {
+    $.get(dir + i + fileextension).fail(function() {
       console.log("error dir " + dir + " file " + i);
       return;
+    }).done(function(){
+      $("<img />").attr('src', dir + i + fileextension ).addClass("content").appendTo(".photos")
+      .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>').attr("loading","lazy");
     });
 
   }
@@ -103,7 +103,7 @@ function addImages(category) {
 }
 
 
-addImages("art_nu");
+addImages("lookbook");
 
 
 // function addvideo(num){
