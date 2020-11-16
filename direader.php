@@ -1,10 +1,8 @@
 <?php
-if (!isset($_GET['img']){
     $files = glob("images/art_nu/*.{jpg,gif,png}", GLOB_BRACE);
         foreach($files in $file){
             echo "<img src='$file'>";
             }
-}
 // ---
 // function listFolderFiles($dir){
 //     $ffs = scandir($dir);
