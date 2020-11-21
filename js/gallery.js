@@ -25,37 +25,37 @@ $(document).ready(function () {
 });
 
 
+// serv
+// $.get("direader.php", function(data) {
+//   console.log(data); //"data" contains whatever someScript.php returned
+//   $(".photos").append(data);
+// });
 
-$.get("direader.php", function(data) {
-  console.log(data); //"data" contains whatever someScript.php returned
-  $(".photos").append(data);
-});
 
 
+function addImages(category, num){
+    var dir = "images/gallery/"+category+"/";
+    var fileextension = ".jpg";
+    var i = 1;
 
-// function addImages(category, num){
-//     var dir = "../images/gallery/"+category+"/";
-//     var fileextension = ".jpg";
-//     var i = "1";
-
-//     $(function imageloop(){
-//       $.get(dir+i+fileextension).fail(function() { 
-//         console.log("error dir "+category+" file "+i);
-//         return;
-//       });
-//       if(category=="video")
-//       {
-//         $("<video />").attr('src', dir + i + ".mp4" ).addClass("content").appendTo(".photos")
-//         .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>');
-//       }
-//       else
-//       {
-//       $("<img />").attr('src', dir + i + fileextension ).addClass("content").appendTo(".photos")
-//       .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>').attr("loading","lazy");
-//             // if ( img == null ) {
-//             //   console.log("error")
-//             // }
-//       }
+    $(function imageloop(){
+      // $.get(dir+i+fileextension).fail(function() { 
+      //   console.log("error dir "+category+" file "+i);
+      //   return;
+      // });
+      if(category=="video")
+      {
+        $("<video />").attr('src', dir + i + ".mp4" ).addClass("content").appendTo(".photos")
+        .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>');
+      }
+      else
+      {
+      $("<img />").attr('src', dir + i + fileextension ).addClass("content").appendTo(".photos")
+      .wrapAll('<div class="gallery_product '+'filter '+category+' height'+getRandomInt(1,6) +'"/>').attr("loading","lazy");
+            // if ( img == null ) {
+            //   console.log("error")
+            // }
+      }
 
 
 //   //     $.get(dir+i+fileextension, function(status) {  
@@ -67,16 +67,23 @@ $.get("direader.php", function(data) {
 
 //       // img = dir+i+fileextension;
 //       // img.onerror = function() { console.log('Error'+i); };
-//       if (i==num){
-//       }
-//       else{
-//         i++;
-//         imageloop();
-//       };
+      if (i>=num){
+      }
+      else{
+        i++;
+        imageloop();
+      };
 
 
-//     });   
-//   }
+    });   
+  }
+
+addImages("portrait",4);
+addImages("art_nu",3);
+addImages("reportage",4);
+addImages("wedding",2);
+addImages("lookbook",5);
+addImages("video",1);
 /*--------------------getimgs
 function addImages(category) {
 
@@ -133,12 +140,7 @@ getimgs----------------------*/
 // }
 
 
-// addImages("portrait",2);
-// addImages("art_nu",2);
-// addImages("reportage",2);
-// addImages("wedding",5);
-// addImages("lookbook",5);
-// addImages("video",1);
+
 
 
 //   
