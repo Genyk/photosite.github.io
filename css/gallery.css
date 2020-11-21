@@ -4,6 +4,7 @@
   }
 
 .back{
+  display: flex;
 height: 200px;
 height: 25vh;
 background: url(../images/backimg/1.jpg) no-repeat;  
@@ -19,16 +20,18 @@ background-size: cover;
 /* position:absolute;  */
 }
 
-h1{
-  /* display: block; */
+.name{
+  display: block;
   font-family: Angeliny-Regular;
-  font-size: 140px;
-  font-size: 18vh;
+  font-size: 40px;
+  font-size: 19vmin;
+  /* padding-top: 3em; */
+  
   /* color: indigo; */
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
   font-weight: 500;
-  margin: 0;
+  margin: auto;
   text-shadow:0 0 10px rgba(0, 0, 0, 0.8);
   /* text-shadow:0 0 10px rgba(255, 255, 255, 0.5); */
 
@@ -40,6 +43,14 @@ h1{
   /* height: ; */
 
   
+}
+.gallery_word{
+  font-family: Angeliny-Regular;
+  font-size: 60px;
+  margin: 10px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+
 }
 
 /* .gallery-title
